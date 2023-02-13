@@ -4,6 +4,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Header from './components/Header'
 import MeatList from './components/MeatList'
+import MeatControl from './components/MeatControl'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,7 +34,7 @@ function App() {
     <div>    
       <Navbar />
       <Header />
-      <MeatList />
+      <MeatControl />
     </div>
   )
 }

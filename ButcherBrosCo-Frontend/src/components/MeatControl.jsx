@@ -12,7 +12,6 @@ export default class MeatControl extends React.Component {
       selectedMeat: null
     };
   }
-
   
 
   render() {
