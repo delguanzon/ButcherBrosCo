@@ -3,15 +3,18 @@ import React from "react";
 export default function MeatCard(props) {
   return (
     <div className="meatCard">
-      <img src={`${props.imgUrl}`} className="card--image"/>
+      <img src={`${props.imgUrl}`} className="meatCard--image"/>
+      <p className="meatCard--name">{props.name}</p>
       <div className="meatCard--stats">
           <span className="card--star">⭐</span>
           <span>{props.stats.rating}</span>
           <span className="gray">({props.stats.reviewCount} Reviews)</span>
       </div>
-      <p className="meatCard--title">{props.title}</p>
+      <p className="meatCard--weight">
+          {props.weight}
+      </p>
       <p className="meatCard--price">
-          <span className="bold">${props.price}</span> ea
+          <strong>${props.price}</strong> ea
       </p>
     </div>
     

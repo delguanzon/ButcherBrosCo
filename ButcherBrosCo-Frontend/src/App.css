@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  font-family: 'Poppins', 'Helvetica';
 }
 
 nav {
@@ -17,6 +18,10 @@ section {
   padding: 20px;
 }
 
+.gray {
+  color: #918E9B;
+}
+
 .header {
   display: flex;
   justify-content:space-around;
@@ -28,4 +33,25 @@ section {
   max-width: 500px;
   align-self: center;
   border-radius: 20px;
+}
+
+
+.meatCard {
+  width: 175px;
+  font-size: 12px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column; 
+  position: relative;
+}
+
+.meatCard--name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.meat-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
