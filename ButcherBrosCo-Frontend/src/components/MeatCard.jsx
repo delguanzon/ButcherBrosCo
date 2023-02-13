@@ -2,7 +2,7 @@ import React from "react";
 
 export default function MeatCard(props) {
   return (
-    <div className="meatCard" onClick="">
+    <div className="meatCard" onClick={() => props.clicked(props.id)}>
       <div className="meatCard__div--img">  
         <img src={`${props.imgUrl}`} className="meatCard--image"/>
       </div>

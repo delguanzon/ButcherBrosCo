@@ -1,13 +1,14 @@
 import React from 'react';
 import MeatCard from './MeatCard';
 import {v4 as uuidv4} from 'uuid';
+import inventory from '../assets/data';
 
 
-export default function MeatList() {
+export default function MeatList(props) {
 
+  
   const meatList = [
     {
-      id: uuidv4,
       name: "AMERICAN WAGYU BONELESS GOLD LABEL RIBEYE",
       grading: "6 or above on Japanese grading scale (For reference, USDA Prime graded cattle fall in the 4 to 5 range)  This is the highest rating offered by Snake River Farms.",
       price: 130,
@@ -22,7 +23,6 @@ export default function MeatList() {
       quantity: 70,
     },
     {
-      id: 2,
       name: "AMERICAN WAGYU BONELESS GOLD LABEL RIBEYE",
       grading: "6 or above on Japanese grading scale (For reference, USDA Prime graded cattle fall in the 4 to 5 range)  This is the highest rating offered by Snake River Farms.",
       price: 130,
@@ -38,18 +38,19 @@ export default function MeatList() {
     }
   ]
 
-  const meatCards = meatList.map(meat => {
+  const meatCards = props.list.map(meat => {
     return (
             <MeatCard
                 key={meat.id}
-                {...meat}                
+                clicked={props.onMeatSelection}
+                {...meat}
             />
         )
     })  
 
 
   return (
-    <section className="meat-list">
+    <section className="meat-list" style={props.style}>
       {meatCards}
     </section>
   )
