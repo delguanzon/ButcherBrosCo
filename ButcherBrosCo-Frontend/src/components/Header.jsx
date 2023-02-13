@@ -7,7 +7,7 @@ export default function Header() {
       <img src={headerImage} className ="header--image" alt="logo" />
       <div>
         <h1 className="hero--header">Only the best selection of meats</h1>
-        <p className="hero--text">View our selection of the best quality meats; USDA Prime, A5 Japanese Wagyu  and a lot more!</p>
+        <p className="hero--text">View our selection of the best quality meats; USDA Prime, A5 Japanese Wagyu—and a lot more!</p>
       </div>
     </section>
   )

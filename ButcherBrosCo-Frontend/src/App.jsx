@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 import Navbar from './components/Navbar'
 import Header from './components/Header'
+import MeatList from './components/MeatList'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,6 +33,7 @@ function App() {
     <div>    
       <Navbar />
       <Header />
+      <MeatList />
     </div>
   )
 }
