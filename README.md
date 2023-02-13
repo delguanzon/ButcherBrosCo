@@ -38,7 +38,7 @@ Butcher Bros Co sells top quality meats. This app is created for managing the co
 * Run ``` $npm install ``` to install dependencies
 * For building and live preview, use ```npm run dev```
 * If the project did not automatically open in a browser, Copy and Paste the Local url in a web browser which can be found in your terminal:
-<img src=".\readme\terminal.jpg">
+<img src=".\readme\terminal.png">
 
 * By default, it is set to ```https://localhost:5173```
 
