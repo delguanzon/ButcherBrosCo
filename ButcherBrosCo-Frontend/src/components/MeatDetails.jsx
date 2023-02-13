@@ -17,12 +17,22 @@ export default function MeatDetails(props) {
           <span>{props.meat.stats.rating}</span>
           <span className="gray">({props.meat.stats.reviewCount} Reviews)</span>
       </div>
-      <hr/>      
+      <hr/>
       <p className="meatCard--weight">
-          {props.meat.weight}
+          <strong>Source: </strong>{props.meat.source}
       </p>
-      <p className="meatCard--price">
-          <strong>${props.meat.price}</strong> ea
+      <p className="meatCard--weight">
+          <strong>Grading: </strong>{props.meat.grading}
+      </p>
+      <p className="meatCard--weight">
+          <strong>Breed: </strong>{props.meat.breed}
+      </p>
+      <p className="meatCard--weight">
+          <strong>Weight: </strong>{props.meat.weight}
+      </p>
+      <p className="meatCard--qty">
+          <span><strong>${props.meat.price}</strong> ea</span>
+          <span>Remaining Qty: <strong>${props.meat.quantity}</strong></span>
       </p>
     </div>
     
