@@ -36,8 +36,11 @@ Butcher Bros Co sells top quality meats. This app is created for managing the co
 * Clone this repository on your desktop
 * Navigate to the project folder located at ../ButcherBrosCo-Frontend/ using a terminal of your choice
 * Run ``` $npm install ``` to install dependencies
-* Then please follow the steps for setting up the API Key below before building and preview of the project.
 * For building and live preview, use ```npm run dev```
+* If the project did not automatically open in a browser, Copy and Paste the Local url in a web browser which can be found in your terminal:
+<img src=".\readme\terminal.jpg">
+
+* By default, it is set to ```https://localhost:5173```
 
 ## Component Diagram
 
