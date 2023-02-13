@@ -17,6 +17,7 @@
 * React
 * UUID Generator
 * Vite
+* Vercel
 
 ## Description
 
@@ -41,6 +42,12 @@ Butcher Bros Co sells top quality meats. This app is created for managing the co
 <img src=".\readme\terminal.png">
 
 * By default, it is set to ```https://localhost:5173```
+
+### Live Preview
+
+Alternatively, you can view the app through the follwing link:
+
+* < https://butcher-bros-co-frontend.vercel.app/ >
 
 ## Component Diagram
 
