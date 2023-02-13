@@ -12,7 +12,7 @@ export default function MeatCard(props) {
           <span>{props.stats.rating}</span>
           <span className="gray">({props.stats.reviewCount} Reviews)</span>
       </div>
-      <hr/>      
+      <hr/>
       <p className="meatCard--weight">
           {props.weight}
       </p>
