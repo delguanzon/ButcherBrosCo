@@ -13,7 +13,7 @@ export default function PopUp(props) {
   if(props.isEditForm) {
     visibleSection = isFormVisible? <MeatForm meat={props.meat}
                                                 onSubmitEdit={props.submitEdit}
-                                                formType="edit"/> : <MeatDetails meat={props.meat}/>;
+                                                formType="edit"/> : <MeatDetails meat={props.meat} onSellMeat={props.submitEdit}/>;
   } 
   else {
     visibleSection = <MeatForm  meat={props.meat}

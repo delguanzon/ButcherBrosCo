@@ -30,13 +30,18 @@ export default class MeatControl extends React.Component {
                     formVisibleOnPage: false });
   }
 
-  handleSubmitEdit = (meat) => {
+  handleSubmitEdit = (meat, isEdited) => {
     const newMasterMeatList = this.state.masterMeatList
       .filter(meatItem => meatItem.id !== meat.id)
       .concat(meat);
+    if(isEdited) {
+      this.setState({
+        masterMeatList: newMasterMeatList,
+        selectedMeat: null
+      });
+    }
     this.setState({
       masterMeatList: newMasterMeatList,
-      selectedMeat: null
     });
   }
 

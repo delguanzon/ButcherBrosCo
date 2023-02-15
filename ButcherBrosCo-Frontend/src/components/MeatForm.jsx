@@ -18,7 +18,8 @@ export default function MeatForm(props) {
         weight: event.target.meatWeight.value || props.meat.weight,
         price: event.target.meatPrice.value || props.meat.price,
         quantity: event.target.meatQty.value || props.meat.quantity
-      });
+      },
+      true);
     }
 
     else {
