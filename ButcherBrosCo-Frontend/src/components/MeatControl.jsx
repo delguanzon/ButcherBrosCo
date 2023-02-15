@@ -3,6 +3,8 @@ import MeatList from './MeatList';
 import { v4 } from 'uuid';
 import inventory from '../assets/data';
 import MeatDetails from './MeatDetails';
+import MeatForm from './MeatForm';
+import PopUp from './PopUp';
 
 export default class MeatControl extends React.Component {
 
@@ -35,7 +37,7 @@ export default class MeatControl extends React.Component {
     }
     if (this.state.selectedMeat != null) {
       currentlyVisibleState = <>
-                                <MeatDetails 
+                                <PopUp
                                   meat = {this.state.selectedMeat} 
                                   clickClose={this.handleClickClose}
                                   // clickEdit={this.handleClickEdit}
@@ -49,7 +51,7 @@ export default class MeatControl extends React.Component {
                                 />
     }    
     return (
-      <section className="meatControl">        
+      <section className="meatControl container">        
         <button onClick={this.showDetails}>Add a Meat</button>
         {currentlyVisibleState}        
       </section>

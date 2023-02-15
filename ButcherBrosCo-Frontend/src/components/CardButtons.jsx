@@ -7,6 +7,7 @@ export default function CardButtons(props){
         onClick={()=>props.isClosed()}
         className='btn btn-outline-light rounded-pill'>✖️</button>
       <button className='btn btn-outline-light rounded-pill'>✏️</button>
+      <button className='btn btn-outline-light rounded-pill'>✔️</button>
     </div>
   )
 }

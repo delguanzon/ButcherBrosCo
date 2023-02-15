@@ -3,11 +3,11 @@ import CardButtons from './CardButtons';
 
 export default function MeatDetails(props) {
   return (
-    <div className="card__lg">
-      <CardButtons 
+    <>
+      {/* <CardButtons 
         isClosed={props.clickClose}
         // isEditable={props}
-        />
+        /> */}
       <div className="meatCard__div--img">  
         <img src={`${props.meat.imgUrl}`} className="meatCard--image"/>
       </div>
@@ -34,7 +34,7 @@ export default function MeatDetails(props) {
           <span><strong>${props.meat.price}</strong> ea</span>
           <span>Remaining Qty: <strong>${props.meat.quantity}</strong></span>
       </p>
-    </div>
+    </>
     
   )
 }
