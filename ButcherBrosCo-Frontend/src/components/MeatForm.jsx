@@ -33,6 +33,7 @@ export default function MeatForm(props) {
         weight: event.target.meatWeight.value,
         price: event.target.meatPrice.value,
         quantity: event.target.meatQty.value,
+        profile: event.target.meatProfile.value,
         stats: {
           rating: 0,
           reviewCount: 0
@@ -62,6 +63,12 @@ export default function MeatForm(props) {
           <label htmlFor="meatSource" className='col-3 col-form-label'>Source: </label>
           <div className='col-9'>
             <input id="meatSource" type="text" className="form-control" defaultValue={props.meat.source}/>
+          </div> 
+        </div> 
+        <div className="row mb-3">
+          <label htmlFor="meatProfile" className='col-3 col-form-label'>Meat Profile: </label>
+          <div className='col-9'>
+            <input id="meatProfile" type="text" className="form-control" defaultValue={props.meat.profile}/>
           </div> 
         </div> 
         <div className="row mb-3">

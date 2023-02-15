@@ -42,7 +42,7 @@ export default function MeatDetails(props) {
       <p className="meatCard--qty">
           <span><strong>${props.meat.price}</strong> ea</span>
           <span>Remaining Qty: <strong>{meatCount}</strong></span>
-          <button onClick={sellMeat}>Sell x1</button>
+          <button className="btn btn-outline-warning roundedPill"onClick={sellMeat}>Sell x1</button>
       </p>
     </>
     
