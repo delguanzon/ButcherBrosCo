@@ -75,7 +75,7 @@ export default class MeatControl extends React.Component {
                                 <PopUp
                                   meat = {{}}
                                   clickClose={this.handleClickClose}
-                                  submitNew={this.handleSubmitEdit}
+                                  submitNew={this.handleSubmitNew}
                                   isEditForm={false}
                                   
                                 />
