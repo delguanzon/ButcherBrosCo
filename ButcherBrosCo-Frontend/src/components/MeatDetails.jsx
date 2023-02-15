@@ -28,6 +28,9 @@ export default function MeatDetails(props) {
           <strong>Source: </strong>{props.meat.source}
       </p>
       <p className="meatCard--weight">
+          <strong>Meat Profile: </strong>{props.meat.profile}
+      </p>
+      <p className="meatCard--weight">
           <strong>Grading: </strong>{props.meat.grading}
       </p>
       <p className="meatCard--weight">

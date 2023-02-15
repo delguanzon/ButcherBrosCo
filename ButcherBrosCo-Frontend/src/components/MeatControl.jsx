@@ -96,7 +96,7 @@ export default class MeatControl extends React.Component {
     return (
       <section className="meatControl container">        
         <button className="btn btn-outline-dark"onClick={this.showAddMeatForm}>Add a Meat</button>
-        {currentlyVisibleState}        
+        {currentlyVisibleState}
       </section>
     );
   }
