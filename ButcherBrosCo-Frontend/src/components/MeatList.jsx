@@ -43,6 +43,7 @@ export default function MeatList(props) {
             <MeatCard
                 key={meat.id}
                 clicked={props.onMeatSelection}
+                
                 {...meat}
             />
         )

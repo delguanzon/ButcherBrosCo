@@ -2,12 +2,18 @@ import React from 'react';
 import CardButtons from './CardButtons';
 
 export default function MeatDetails(props) {
+
+  const [meatCount, setMeatCount] = React.useState(props.meat.quantity);
+
+  const sellMeat = () => {
+    if(meatCount === 0) return;
+    setMeatCount( meatCount => meatCount - 1);
+    props.onSellMeat({...props.meat, quantity : meatCount});
+  }
+
+
   return (
     <>
-      {/* <CardButtons 
-        isClosed={props.clickClose}
-        // isEditable={props}
-        /> */}
       <div className="meatCard__div--img">  
         <img src={`${props.meat.imgUrl}`} className="meatCard--image"/>
       </div>
@@ -32,7 +38,8 @@ export default function MeatDetails(props) {
       </p>
       <p className="meatCard--qty">
           <span><strong>${props.meat.price}</strong> ea</span>
-          <span>Remaining Qty: <strong>${props.meat.quantity}</strong></span>
+          <span>Remaining Qty: <strong>{meatCount}</strong></span>
+          <button onClick={sellMeat}>Sell x1</button>
       </p>
     </>
     
