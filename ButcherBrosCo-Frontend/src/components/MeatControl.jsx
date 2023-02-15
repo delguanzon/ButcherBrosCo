@@ -29,6 +29,16 @@ export default class MeatControl extends React.Component {
     this.setState({selectedMeat: null});
   }
 
+  handleSubmitEdit = (meat) => {
+    const newMasterMeatList = this.state.masterMeatList
+      .filter(meatItem => meatItem.id !== meat.id)
+      .concat(meat);
+    this.setState({
+      masterMeatList: newMasterMeatList,
+      selectedMeat: null
+    });
+  }
+
   render() {
 
     let currentlyVisibleState = null;
@@ -40,7 +50,7 @@ export default class MeatControl extends React.Component {
                                 <PopUp
                                   meat = {this.state.selectedMeat} 
                                   clickClose={this.handleClickClose}
-                                  // clickEdit={this.handleClickEdit}
+                                  submitEdit={this.handleSubmitEdit}
                                 />
                                 <MeatList style={blur} list={this.state.masterMeatList}/>
                               </>;

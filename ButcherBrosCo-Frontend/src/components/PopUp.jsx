@@ -5,13 +5,14 @@ import MeatDetails from './MeatDetails';
 
 export default function PopUp(props) {
 
-  const [isFormVisible, setIsFormVisible] = React.useState(true);
+  const [isFormVisible, setIsFormVisible] = React.useState(false);
   const showForm = () => {
     setIsFormVisible(!isFormVisible);
   }
-  let visiblesection = isFormVisible? <MeatForm meat={props.meat}/> : <MeatDetails meat={props.meat}/>;
-  let submitButton = isFormVisible? <button className='btn btn-outline-light rounded-pill mx-1'>✔️</button> : null;
-
+  let visiblesection = isFormVisible? <MeatForm meat={props.meat}
+                                                onSubmitEdit={props.submitEdit}
+                                                formType="edit"/> : <MeatDetails meat={props.meat}/>;
+  
   return (
     <div className="card__lg z-1 position-absolute top-50 start-50 translate-middle">
       {/* <CardButtons 
@@ -25,7 +26,6 @@ export default function PopUp(props) {
         <button 
           className='btn btn-outline-light rounded-pill mx-1'
           onClick={showForm}>✏️</button>
-        {submitButton}
       </div>
       {/* <MeatForm meat={props.meat}/> */}
       {visiblesection}
