@@ -3,9 +3,13 @@ import React from "react";
 export default function MeatCard(props) {
   return (
     <div className="meatCard" onClick={() => props.clicked(props.id)}>
-      <div className="meatCard__div--img">  
-        <img src={`${props.imgUrl}`} className="meatCard--image"/>
+      
+      <div className="meatCard__div--img position-relative">  
+        <img src={`${props.imgUrl}`} className="meatCard--image"/>        
+        {props.stats.rating > 4 ? <div className="badge text-bg-success z-1 position-absolute top-0 start-0">Top Rated</div> : null}
       </div>
+      {props.quantity <=0 ?<div className="badge text-bg-danger">Sold Out</div> : null}
+      {props.quantity <= 20 ?<div className="badge text-bg-warning">Restock Soon</div> : null}
       <p className="meatCard--name">{props.name}</p>      
       <div className="meatCard--stats">
           <span className="card--star">⭐</span>
