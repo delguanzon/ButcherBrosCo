@@ -27,10 +27,10 @@ Butcher Bros Co sells top quality meats. This app is created for managing the co
 
 * [x] As a user, I want to see a list/menu of all available types of meats.
 * [x] For each item, I want to see its name, origin, price, and grading meat. (You are welcome to include anything additional that is relevant to the product your store carries.)
-* [ ] As a user, I want to submit a form to add a new collection of meat to the inventory.
+* [x] As a user, I want to submit a form to add a new collection of meat to the inventory.
 * [x] As a user, I want to be able to click on a burlap sack to see its detail page.
-* [ ] As a user, I want to see how many meats are left for selling.
-* [ ] As a user, I want to be able to click a button to sell a single qty of meat. This should decrease the number of available meat left by 1. The quantity should not be able to go below 0.
+* [x] As a user, I want to see how many meats are left for selling.
+* [x] As a user, I want to be able to click a button to sell a single qty of meat. This should decrease the number of available meat left by 1. The quantity should not be able to go below 0.
 
 ## Setup/Installation Requirements
 
@@ -48,6 +48,8 @@ Butcher Bros Co sells top quality meats. This app is created for managing the co
 Alternatively, you can view the app through the follwing link:
 
 * < https://butcher-bros-co-frontend.vercel.app/ >
+
+<img src=".\readme\splash.png">
 
 ## Component Diagram
 
