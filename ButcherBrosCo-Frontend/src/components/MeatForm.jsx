@@ -1,9 +1,8 @@
 import React from 'react';
-import CardButtons from './CardButtons';
 
 export default function MeatForm(props) {
 
-  const formSubmissionHanlder = (event) => {
+  const formSubmissionHandler = (event) => {
     event.preventDefault();
     if(props.formType === "edit") {
       props.onSubmitEdit({
@@ -24,7 +23,7 @@ export default function MeatForm(props) {
 
   return (
     <>
-      <form onSubmit={formSubmissionHanlder}>
+      <form onSubmit={formSubmissionHandler}>
         <div className="row mb-3">
           <label htmlFor="meatImg" className='col-3 col-form-label'>Img URL: </label>
           <div className='col-9'>

@@ -26,7 +26,8 @@ export default class MeatControl extends React.Component {
   }
 
   handleClickClose = () => {
-    this.setState({selectedMeat: null});
+    this.setState({ selectedMeat: null,
+                    formVisibleOnPage: false });
   }
 
   handleSubmitEdit = (meat) => {
@@ -39,6 +40,19 @@ export default class MeatControl extends React.Component {
     });
   }
 
+  handleSubmitEdit = (meat) => {
+    const newMasterMeatList = this.state.masterMeatList.concat(meat);
+    this.setState({
+      masterMeatList: newMasterMeatList,
+      selectedMeat: null,
+      formVisibleOnPage: false
+    })
+  }
+
+  showAddMeatForm = () => {
+    this.setState({formVisibleOnPage: true});
+  }
+
   render() {
 
     let currentlyVisibleState = null;
@@ -48,13 +62,27 @@ export default class MeatControl extends React.Component {
     if (this.state.selectedMeat != null) {
       currentlyVisibleState = <>
                                 <PopUp
-                                  meat = {this.state.selectedMeat} 
+                                  meat = {this.state.selectedMeat}
                                   clickClose={this.handleClickClose}
                                   submitEdit={this.handleSubmitEdit}
+                                  isEditForm={true}
                                 />
                                 <MeatList style={blur} list={this.state.masterMeatList}/>
                               </>;
-    } else{
+    }
+    else if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = <>
+                                <PopUp
+                                  meat = {{}}
+                                  clickClose={this.handleClickClose}
+                                  submitNew={this.handleSubmitEdit}
+                                  isEditForm={false}
+                                  
+                                />
+                                <MeatList style={blur} list={this.state.masterMeatList}/>
+                              </>;
+    } 
+    else {
       currentlyVisibleState = <MeatList 
                                 list={this.state.masterMeatList}
                                 onMeatSelection={this.showDetails}
@@ -62,7 +90,7 @@ export default class MeatControl extends React.Component {
     }    
     return (
       <section className="meatControl container">        
-        <button onClick={this.showDetails}>Add a Meat</button>
+        <button onClick={this.showAddMeatForm}>Add a Meat</button>
         {currentlyVisibleState}        
       </section>
     );
