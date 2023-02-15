@@ -1,9 +1,11 @@
 import React from 'react';
+import { v4 } from 'uuid';
 
 export default function MeatForm(props) {
 
   const formSubmissionHandler = (event) => {
     event.preventDefault();
+
     if(props.formType === "edit") {
       props.onSubmitEdit({
         ...props.meat,
@@ -18,8 +20,26 @@ export default function MeatForm(props) {
         quantity: event.target.meatQty.value || props.meat.quantity
       });
     }
-  }
 
+    else {
+      props.onSubmitNew({        
+        id: v4(),
+        imgUrl: event.target.meatImg.value || "https://www.culinaryschools.org/clipart/meat/beef.gif",
+        name: event.target.meatName.value,
+        source: event.target.meatSource.value,
+        grading: event.target.meatGrading.value,
+        breed: event.target.meatBreed.value,
+        weight: event.target.meatWeight.value,
+        price: event.target.meatPrice.value,
+        quantity: event.target.meatQty.value,
+        stats: {
+          rating: 0,
+          reviewCount: 0
+        }        
+      });
+    }
+  }
+  
 
   return (
     <>
