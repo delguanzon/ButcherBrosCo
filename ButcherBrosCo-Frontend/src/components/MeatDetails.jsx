@@ -1,5 +1,6 @@
 import React from 'react';
 import CardButtons from './CardButtons';
+import PropTypes from 'prop-types';
 
 export default function MeatDetails(props) {
 
@@ -40,11 +41,29 @@ export default function MeatDetails(props) {
           <strong>Weight: </strong>{props.meat.weight}
       </p>
       <p className="meatCard--qty">
-          <span><strong>${props.meat.price}</strong> ea</span>
+          <span><strong>${props.meat.price.toFixed(2)}</strong> ea</span>
           <span>Remaining Qty: <strong>{meatCount}</strong></span>
           <button className="btn btn-outline-warning roundedPill"onClick={sellMeat}>Sell x1</button>
       </p>
     </>
     
   )
+}
+
+MeatDetails.propTypes = {
+  meat: PropTypes.shape({
+
+    name: PropTypes.string,    
+    source: PropTypes.string,
+    quantity: PropTypes.number,
+    grading: PropTypes.string,
+    breed: PropTypes.string,
+    weight: PropTypes.string,
+    price: PropTypes.number,
+    
+    stats: PropTypes.shape({
+      reviewCount: PropTypes.number,
+      rating: PropTypes.number,
+    })
+  })
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function MeatCard(props) {
   let restock
@@ -25,9 +26,24 @@ export default function MeatCard(props) {
           {props.weight}
       </p>
       <p className="meatCard--price">
-          <strong>${props.price}</strong> ea
+          <strong>${props.price.toFixed(2)}</strong> ea
       </p>
     </div>
     
   );
+}
+
+MeatCard.propTypes = {
+  name: PropTypes.string,    
+  source: PropTypes.string,
+  quantity: PropTypes.number,
+  grading: PropTypes.string,
+  breed: PropTypes.string,
+  weight: PropTypes.string,
+  price: PropTypes.number,
+  
+  stats: PropTypes.shape({
+    reviewCount: PropTypes.number,
+    rating: PropTypes.number,
+  })  
 }

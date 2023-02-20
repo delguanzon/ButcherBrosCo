@@ -1,0 +1,18 @@
+body {
+  width: 400px
+}
+
+.form {
+  border: 1px solid rgb(226, 226, 226);
+}
+
+input {
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 10px;
+  text-indent: 10px;
+}
+
+#submit {
+  background-color:
+}
+

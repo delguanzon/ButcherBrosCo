@@ -1,5 +1,6 @@
 import React from 'react';
 import { v4 } from 'uuid';
+import PropTypes from 'prop-types';
 
 export default function MeatForm(props) {
 
@@ -16,8 +17,8 @@ export default function MeatForm(props) {
         grading: event.target.meatGrading.value || props.meat.grading,
         breed: event.target.meatBreed.value || props.meat.breed,
         weight: event.target.meatWeight.value || props.meat.weight,
-        price: event.target.meatPrice.value || props.meat.price,
-        quantity: event.target.meatQty.value || props.meat.quantity
+        price: parseFloat(event.target.meatPrice.value) || props.meat.price,
+        quantity: parseInt(event.target.meatQty.value) || props.meat.quantity
       },
       true);
     }
@@ -31,8 +32,8 @@ export default function MeatForm(props) {
         grading: event.target.meatGrading.value,
         breed: event.target.meatBreed.value,
         weight: event.target.meatWeight.value,
-        price: event.target.meatPrice.value,
-        quantity: event.target.meatQty.value,
+        price: parseFloat(event.target.meatPrice.value),
+        quantity: parseInt(event.target.meatQty.value),
         profile: event.target.meatProfile.value,
         stats: {
           rating: 0,
@@ -92,11 +93,11 @@ export default function MeatForm(props) {
         <div className="row mb-3">
           <label htmlFor="meatPrice" className='col-3 col-form-label'>Price: </label>
           <div className='col-4'>
-            <input id="meatPrice" type="number" min="0"  className="form-control" defaultValue={props.meat.price}/>
+            <input id="meatPrice" type="number" step="0.01" min="0"  className="form-control" defaultValue={props.meat.price}/>
           </div>
           <label htmlFor="meatQty" className='col-2 col-form-label'>Qty:</label>
           <div className='col-3 mb-3'>
-            <input id="meatQty" type="number" min="0" className="form-control" defaultValue={props.meat.quantity}/>
+            <input id="meatQty" type="number" step="0.01" min="0" className="form-control" defaultValue={props.meat.quantity}/>
           </div>
         </div>
         <div className="row mx-auto">
@@ -106,4 +107,16 @@ export default function MeatForm(props) {
     </>
     
   )
+}
+
+MeatForm.propTypes = {
+  meat: PropTypes.shape({
+    name: PropTypes.string,    
+    source: PropTypes.string,
+    quantity: PropTypes.number,
+    grading: PropTypes.string,
+    breed: PropTypes.string,
+    weight: PropTypes.string,
+    price: PropTypes.number,
+  })
 }

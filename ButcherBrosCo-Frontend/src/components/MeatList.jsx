@@ -2,6 +2,7 @@ import React from 'react';
 import MeatCard from './MeatCard';
 import {v4 as uuidv4} from 'uuid';
 import inventory from '../assets/data';
+import PropTypes from 'prop-types';
 
 
 export default function MeatList(props) {
@@ -55,4 +56,22 @@ export default function MeatList(props) {
       {meatCards}
     </section>
   )
+}
+
+MeatList.propTypes = {
+  meat: PropTypes.shape({
+
+    name: PropTypes.string,    
+    source: PropTypes.string,
+    quantity: PropTypes.number,
+    grading: PropTypes.string,
+    breed: PropTypes.string,
+    weight: PropTypes.string,
+    price: PropTypes.number,
+    
+    stats: PropTypes.shape({
+      reviewCount: PropTypes.number,
+      rating: PropTypes.number,
+    })
+  })
 }

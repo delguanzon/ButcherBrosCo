@@ -2,6 +2,7 @@ import React from 'react';
 import CardButtons from './CardButtons';
 import MeatForm from './MeatForm';
 import MeatDetails from './MeatDetails';
+import PropType from 'prop-types';
 
 export default function PopUp(props) {
 
@@ -33,4 +34,8 @@ export default function PopUp(props) {
       {visibleSection}
     </div>    
   )
+}
+
+PopUp.propTypes = {
+  meat: PropType.object
 }
