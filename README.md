@@ -53,7 +53,7 @@ Alternatively, you can view the app through the follwing link:
 
 ## Component Diagram
 
-<img src=".\readme\app.jpg">
+<img src=".\readme\app.png">
 
 ## Known Bugs
 
