@@ -8,10 +8,10 @@ export default function MeatDetails(props) {
 
   const sellMeat = () => {
     if(meatCount === 0) return;
+    console.log("Meat Count before SetMeatCount:" + meatCount)
     setMeatCount( meatCount => meatCount - 1);
-    props.onSellMeat({...props.meat, quantity : meatCount});
+    props.onSellMeat({...props.meat, quantity : meatCount - 1});
   }
-
 
   return (
     <>
@@ -43,7 +43,7 @@ export default function MeatDetails(props) {
       <p className="meatCard--qty">
           <span><strong>${props.meat.price.toFixed(2)}</strong> ea</span>
           <span>Remaining Qty: <strong>{meatCount}</strong></span>
-          <button className="btn btn-outline-warning roundedPill"onClick={sellMeat}>Sell x1</button>
+          <button className="btn btn-outline-warning roundedPill" onClick={sellMeat}>Sell x1</button>
       </p>
     </>
     

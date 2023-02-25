@@ -6,10 +6,18 @@ export default function MeatCard(props) {
   if (props.quantity <= 20 && props.quantity >0 ) {
     restock = true;
   }
+
+  let clickable;
+  if(props.clicked) {
+    clickable = () => props.clicked(props.id);
+  }
+  else  {
+    clickable = () => {};
+  }
+
   return (
-    <div className="meatCard" onClick={() => props.clicked(props.id)}>
-      
-      <div className="meatCard__div--img position-relative">  
+    <div className="meatCard" onClick={clickable}>
+        <div className="meatCard__div--img position-relative">  
         <img src={`${props.imgUrl}`} className="meatCard--image"/>        
         {props.stats.rating > 4 ? <div className="badge text-bg-success z-1 position-absolute top-0 start-0">Top Rated</div> : null}
       </div>
