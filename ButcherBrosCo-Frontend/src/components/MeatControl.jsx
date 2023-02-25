@@ -72,7 +72,7 @@ export default class MeatControl extends React.Component {
                                   submitEdit={this.handleSubmitEdit}
                                   isEditForm={true}
                                 />
-                                <MeatList style={blur} list={this.state.masterMeatList}/>
+                                <MeatList style={blur} list={this.state.masterMeatList} onMeatSelection={this.showDetails}/>
                               </>;
     }
     else if (this.state.formVisibleOnPage) {
@@ -84,7 +84,7 @@ export default class MeatControl extends React.Component {
                                   isEditForm={false}
                                   
                                 />
-                                <MeatList style={blur} list={this.state.masterMeatList}/>
+                                <MeatList style={blur} list={this.state.masterMeatList} onMeatSelection={this.showDetails}/>
                               </>;
     } 
     else {
