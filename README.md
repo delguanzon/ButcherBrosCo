@@ -57,7 +57,12 @@ Alternatively, you can view the app through the follwing link:
 
 ## Known Bugs
 
-* None
+Bug #1: MeatCard.jsx:9 ```Uncaught TypeError: props.clicked is not a function.``` This error occurs when the user has a Detail view displayed and then clicks one of the other items in the background.
+
+* Issue: showDetails() was not passed as props to MeatList component in MeatControl.js. on lines 76 and 87
+* Fix: Added 
+
+
 
 Found a bug? Email me at <yodelguanzon@gmail.com>
 
